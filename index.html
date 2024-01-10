@@ -169,9 +169,621 @@
 </section>
 
 <!-- Object -->
+
+<header>
+    <h1>Exception Handling</h1>
+</header>
+    
 <section>
     <h2>11. Object</h2>
     <p>An object is an instance of a class. Objects have states and behaviors. Ways to create an object include using the new Operator, newInstance(), Clone(), Factory methods, and Deserialization.</p>
+</section>
+<!-- Exception Handling -->
+<section>
+    <h2>12. Exception Handling</h2>
+    <p>In our application, there are chances of abnormal conditions where the normal flow of the program gets disturbed; such situations are called exceptions. All types of exceptions only occur at runtime. To avoid abnormal termination, we need to handle exceptions. Exceptions can occur due to wrong user input.</p>
+</section>
+
+<!-- What is Exception Handling? -->
+<section>
+    <h2>13. What is Exception Handling?</h2>
+    <p>To avoid occurring exceptions, we need to provide an alternative way to execute the rest of the program; this is called exception handling. Keywords to handle exceptions: try, catch, finally, throw, throws.</p>
+</section>
+
+<!-- Difference between Exception and Error? -->
+<section>
+    <h2>14. Difference between Exception and Error</h2>
+    <table>
+        <tr>
+            <th>Exception</th>
+            <th>Error</th>
+        </tr>
+        <tr>
+            <td>Classified as checked and unchecked type.</td>
+            <td>Classified as an unchecked type.</td>
+        </tr>
+        <tr>
+            <td>It belongs to java.lang.Exception.</td>
+            <td>It belongs to java.lang.Error.</td>
+        </tr>
+        <tr>
+            <td>We need to handle the exceptions.</td>
+            <td>We need to solve the errors.</td>
+        </tr>
+        <tr>
+            <td>Can occur at runtime & compile-time both. E.g., NullPointerException, SqlException, etc.</td>
+            <td>Doesn't occur at compile-time, only occurs at runtime. E.g., OutOfMemoryError, AbstractMethodError, etc.</td>
+        </tr>
+    </table>
+</section>
+
+<!-- Default Exception handling in Java -->
+<section>
+    <h2>15. Default Exception handling in Java</h2>
+    <ol>
+        <li>Problem Analyzed.</li>
+        <li>Problem Finding.</li>
+        <li>Create Object of an Exception found. E.g., ArithmeticException e = new ArithmeticException();</li>
+        <li>Throw e;</li>
+        <li>JVM will catch.</li>
+        <li>JVM will display Exception message.</li>
+    </ol>
+</section>
+
+<!-- Explain Exception hierarchy -->
+<section>
+    <h2>16. Explain Exception hierarchy</h2>
+    <p>Exception hierarchy in Java includes classes like Throwable, Error, and Exception, which further branches into Checked and Unchecked exceptions.</p>
+</section>
+
+<!-- Difference between Checked Exception & Unchecked Exception -->
+<section>
+    <h2>17. Difference between Checked Exception & Unchecked Exception</h2>
+    <table>
+        <tr>
+            <th>Checked Exception</th>
+            <th>Unchecked Exception</th>
+        </tr>
+        <tr>
+            <td>Exceptions that compiler forces the user to write handling code before compilation, it is called checked exception.</td>
+            <td>Exceptions that compiler doesn’t force the user to write handling code are called unchecked exception.</td>
+        </tr>
+        <tr>
+            <td>Compulsory need to handle them.</td>
+            <td>Not compulsory to handle them.</td>
+        </tr>
+        <tr>
+            <td>Increases code.</td>
+            <td>Reduces code.</td>
+        </tr>
+        <tr>
+            <td>E.g. IOException, SqlException, FileNotFoundException, etc.</td>
+            <td>All Runtime Exception as well as all Errors are examples of unchecked exception.</td>
+        </tr>
+    </table>
+</section>
+
+<!-- What are methods in Exception class? -->
+<section>
+    <h2>18. What are methods in Exception class?</h2>
+    <ul>
+        <li>public String getMessage() - Returns a detailed message about the exception that has occurred.</li>
+        <li>public Throwable getCause() - Returns the cause of the exception.</li>
+        <li>public String toString() - Returns the name of the class concatenated with the result of getMessage().</li>
+        <li>public void printStackTrace() - Prints the result of toString() along with the stack trace, the error output stream.</li>
+        <li>public StackTraceElement[] getStackTrace() - Returns an array containing each element on the stack trace.</li>
+        <li>public Throwable fillInStackTrace() - Fills the stack trace of this Throwable object with the current stack trace, adding to any previous information in the stack trace.</li>
+    </ul>
+</section>
+
+<!-- What is use of finally block? -->
+<section>
+    <h2>19. What is the use of finally block?</h2>
+    <p>The "finally" block code will always be executed either there is a problem inside the "try" block or there is no problem inside the "try" block. In both situations, "finally" block code will be executed.</p>
+    <!-- Add more content if needed -->
+<!-- Collections and Maps -->
+
+
+    <header>
+    <h1>Collection</h1>
+</header>
+    
+<section>
+    <h2>Next 1. What is Collection?</h2>
+    <p>The Collection is a framework that provides an architecture to store and manipulate a group of objects. It represents a single unit of objects as a group and provides operations such as searching, sorting, insertion, and deletion on the group of objects.</p>
+</section>
+
+<!-- Why do we use Collection? -->
+<section>
+    <h2>2. Why do we use Collection?</h2>
+    <p><strong>Difference between Array & Collection:</strong></p>
+    <table>
+        <tr>
+            <th>Array</th>
+            <th>Collection</th>
+        </tr>
+        <tr>
+            <td>Fixed in Size.</td>
+            <td>Growable in nature.</td>
+        </tr>
+        <tr>
+            <td>Holds only Homogeneous Data Elements.</td>
+            <td>Holds both Homogeneous and Heterogeneous Elements.</td>
+        </tr>
+        <tr>
+            <td>Not recommended for Memory usage.</td>
+            <td>Recommended for Memory usage.</td>
+        </tr>
+    </table>
+</section>
+
+<!-- Difference between Collection & Collections -->
+<section>
+    <h2>3. Difference between Collection & Collections</h2>
+    <p><strong>Collection:</strong> It is an interface that represents a group of individual objects as a single entity. It provides methods for data structure.</p>
+    <p><strong>Collections:</strong> It is a class used to sort and synchronize collection elements. It provides methods for various operations on a collection.</p>
+</section>
+
+<!-- Which Collection object you have used in your Project? -->
+<section>
+    <h2>4. Which Collection object have you used in your Project?</h2>
+    <ul>
+        <li>List - ArrayList for getting lists of objects from the Database.</li>
+        <li>Set – HashSet for mapping POJOs using Hibernate (One-to-Many & Many-to-One).</li>
+    </ul>
+</section>
+
+<!-- How ArrayList works? -->
+<section>
+    <h2>5. How ArrayList works?</h2>
+    <p>When we create an object of ArrayList, it creates an ArrayList instance with a default capacity of 10. The capacity increases with the formula: New Capacity = ((3/2) x Old Capacity) + 1. ArrayList follows indexing.</p>
+</section>
+
+<!-- Difference between ArrayList & Vector -->
+<section>
+    <h2>6. Difference between ArrayList & Vector</h2>
+    <table>
+        <tr>
+            <th>ArrayList</th>
+            <th>Vector</th>
+        </tr>
+        <tr>
+            <td>Not Synchronized.</td>
+            <td>Synchronized.</td>
+        </tr>
+        <tr>
+            <td>Not Thread Safe.</td>
+            <td>Thread Safe.</td>
+        </tr>
+        <tr>
+            <td>Default Capacity: 10 and increases after by (Old + Old * (3/2)) + 1.</td>
+            <td>Default Capacity: 10 and increases after by Old + Old * 100%.</td>
+        </tr>
+        <tr>
+            <td>Performance is high.</td>
+            <td>Performance is low.</td>
+        </tr>
+        <tr>
+            <td>Enumeration cannot be used.</td>
+            <td>Enumeration can be used.</td>
+        </tr>
+    </table>
+</section>
+
+<!-- How we synchronize ArrayList? -->
+<section>
+    <h2>7. How we synchronize ArrayList?</h2>
+    <p>By default, ArrayList object is non-synchronized, but we can get a synchronized version of the ArrayList object by using the following method of the Collections Class:</p>
+    <pre>
+        <code>
+ArrayList al = new ArrayList();
+List l = Collections.synchronizedList(al);
+        </code>
+    </pre>
+</section>
+
+<!-- Explain all Constructors of ArrayList -->
+<section>
+    <h2>8. Explain all Constructors of ArrayList</h2>
+    <ul>
+        <li><code>ArrayList l = new ArrayList();</code> - Creates an Empty ArrayList Object with the Default Initial Capacity 10.</li>
+        <li><code>ArrayList l = new ArrayList(int initialCapacity);</code> - Creates an Empty ArrayList Object with a specified Initial Capacity.</li>
+        <li><code>ArrayList l = new ArrayList(Collection c);</code> - Creates an equivalent ArrayList Object for the given Collection Object.</li>
+    </ul>
+</section>
+
+<!-- Why set doesn’t allow duplicates? -->
+<section>
+    <h2>9. Why set doesn’t allow duplicates?</h2>
+    <p>Set internally uses HashMap, and HashMap does not accept duplicate keys. As a result, set doesn’t allow duplicate values.</p>
+</section>
+
+<!-- How add() of set works? -->
+<section>
+    <h2>10. How add() of set works?</h2>
+    <p>The <code>add()</code> method of Set returns a boolean value (true or false). It uses the <code>equals()</code> method of the object class and implements HashMap internally.</p>
+</section>
+
+<!-- How LinkedList works? -->
+<section>
+    <h2>11. How LinkedList works? (Why insertion & deletion is fast in LinkedList?)</h2>
+    <p>When we create an object of LinkedList and add an element to it, it stores the element as a node in which the previous & next node address is also stored. This doubly linked list structure makes insertion and deletion operations fast as data shift operations are not needed.</p>
+</section>
+
+<!-- Define LinkedList -->
+<section>
+    <h2>12. Define LinkedList?</h2>
+    <p>LinkedList is one of the implemented classes of the List interface in the collection framework. It allows duplicate values, preserves insertion order, and maintains indexing. It follows a doubly linked list structure and is mostly preferable for insertion and deletion operations.</p>
+</section>
+
+<!-- What is Map? -->
+<section>
+    <h2>13. What is Map?</h2>
+    <p>Map is used to store different objects in the pair of "key" and "value". In a map, the key should be unique, and insertion order will not be maintained.</p>
+</section>
+
+<!-- Difference between HashMap & Hashtable -->
+<section>
+    <h2>14. Difference between HashMap & Hashtable</h2>
+    <table>
+        <tr>
+            <th>HashMap</th>
+            <th>Hashtable</th>
+        </tr>
+        <tr>
+            <td>Not Synchronized.</td>
+            <td>Synchronized.</td>
+        </tr>
+        <tr>
+            <td>Allows multiple threads at a time.</td>
+            <td>Allows a single thread at a time.</td>
+        </tr>
+        <tr>
+            <td>Not thread-safe.</td>
+            <td>Thread-safe.</td>
+        </tr>
+        <tr>
+            <td>Null key (once) & Null value is allowed.</td>
+            <td>Null key & Null value are not allowed.</td>
+        </tr>
+        <tr>
+            <td>Performance is fast.</td>
+            <td>Performance is slow.</td>
+        </tr>
+    </table>
+</section>
+
+<!-- How HashMap works? -->
+<section>
+    <h2>15. How HashMap works?</h2>
+    <p>When we create a HashMap object, it creates a HashMap instance with a default capacity of 16 buckets. During the add (put()) operation, it internally uses hashing to generate hashcodes for keys and calculates the index to find the bucket location for inserting data. It stores the elements in node format.</p>
+</section>
+
+<!-- What is Hash Collision? -->
+<section>
+    <h2>16. What is Hash Collision?</h2>
+    <p>In HashMap, if two keys have the same hashcodes, it is called hash collision. In such a case, a doubly linked list is created to insert data, and retrieval is performed using the equals() method.</p>
+</section>
+
+<!-- What happens when we put the same keys in Map? -->
+<section>
+    <h2>17. What happens when we put the same keys in Map?</h2>
+    <p>If we add a key-value pair where the key already exists, the put method replaces the existing value of the key with the new value.</p>
+</section>
+
+<!-- Contract between equals() & hashcode() -->
+<section>
+    <h2>18. Contract between equals() & hashcode()</h2>
+    <p>If equals() returns true, then objects must have the same hashcodes. If equals() returns false, then objects may or may not have the same hashcodes. If hashcodes of objects are the same, then we can’t conclude the output of equals(), it may be true or false. If hashcodes of objects are different, then the output of equals() must be false.</p>
+</section>
+
+<!-- Difference between HashMap & Synchronized (or Concurrent) HashMap -->
+<section>
+    <h2>19. Difference between HashMap & Synchronized (or Concurrent) HashMap</h2>
+    <table>
+        <tr>
+            <th>HashMap</th>
+            <th>Synchronized or Concurrent HashMap</th>
+        </tr>
+        <tr>
+            <td>Non-Synchronized in nature.</td>
+            <td>Synchronized in nature.</td>
+        </tr>
+        <tr>
+            <td>Not Thread-safe.</td>
+            <td>Thread-safe.</td>
+        </tr>
+        <tr>
+            <td>Performance is high.</td>
+            <td>Performance is low.</td>
+        </tr>
+        <tr>
+            <td>Can throw ConcurrentModificationException.</td>
+            <td>Doesn’t throw ConcurrentModificationException.</td>
+        </tr>
+    </table>
+</section>
+
+<!-- Difference between Comparable & Comparator -->
+<section>
+    <h2>20. Difference between Comparable & Comparator</h2>
+    <table>
+        <tr>
+            <th>Comparable</th>
+            <th>Comparator</th>
+        </tr>
+        <tr>
+            <td>Interface is from java.lang package.</td>
+            <td>Interface is from java.util package.</td>
+        </tr>
+        <tr>
+            <td>Used for Default sorting.</td>
+            <td>Used for Custom sorting.</td>
+        </tr>
+        <tr>
+            <td>Has only one method i.e. compareTo.</td>
+            <td>Has two methods i.e. compare & equals.</td>
+        </tr>
+        <tr>
+            <td>Programmer decides how sorting is to be done.</td>
+            <td>User decides how sorting is to be done.</td>
+        </tr>
+    </table>
+</section>
+
+<!-- What is Identity HashMap? -->
+<section>
+    <h2>21. What is Identity HashMap?</h2>
+    <p>In IdentityHashMap, JVM will use the == operator to identify duplicate keys, which is meant for reference comparison.</p>
+    <pre>
+        <code>
+Integer i = new Integer(5);
+Integer i1 = new Integer(5);
+Map m = new IdentityHashMap();
+m.put(i, "java");
+m.put(i1, "cjc");
+System.out.println(m); // {5=java, 5=cjc}
+        </code>
+    </pre>
+</section>
+
+<!-- What is fail-safe & fail-fast iterator? -->
+<section>
+    <h2>22. What is fail-safe & fail-fast iterator?</h2>
+    <p>Using iterators, we can traverse over the collection's objects. Fail-safe iterators do not throw any exception even if the collection is modified while iterating over it. Fail-fast iterators throw an exception (ConcurrentModificationException) if the collection is modified while iterating over it.</p>
+    <p><strong>Fail-Fast Iterators Internal Working:</strong></p>
+    <ul>
+        <li>Every fail-fast collection has a modCount field, representing how many times the collection has changed/modified.</li>
+        <li>At every modification of this collection, the modCount value is incremented (e.g., when elements are added or removed).</li>
+        <li>The iterator stores the modCount value during initialization, and if there is any change in the collection structure while iterating, an exception is thrown.</li>
+    </ul>
+</section>
+<header>
+    <h1>Hibernate</h1>
+</header>
+<!-- What is WeakHashMap? -->
+<section>
+    <h2>23. What is WeakHashMap?</h2>
+    <p>In the case of WeakHashMap, if an object doesn't contain any references, it is always eligible for garbage collection (GC) even though it is associated with WeakHashMap. Garbage collector dominates WeakHashMap. Both null values and null keys are supported in WeakHashMap, and it is not synchronized.</p>
+</section>
+
+    
+<!-- Hibernate and ORM -->
+<section>
+    <h2>1. What is Hibernate & ORM tool?</h2>
+    <p><strong>(Hibernate)</strong></p>
+    <ul>
+        <li>It is a Java framework that simplifies the development of Java applications to interact with the database.</li>
+        <li>Creates SQL queries at runtime according to the database.</li>
+        <li>Provides automatic table creation feature, relationship mapping (IS-A and HAS-A), and primary key auto-increment.</li>
+        <li>Converts checked exceptions into unchecked exceptions.</li>
+        <li>Provides cache mechanism and supports HQL (Hibernate Query Language) queries and Criteria API.</li>
+    </ul>
+    <p><strong>(ORM)</strong></p>
+    <ul>
+        <li>ORM (Object-Relational Mapping) is a programming technique that maps objects to data stored in the database.</li>
+        <li>Overcomes the mismatch between OOP languages & databases, reducing developer efforts, time, and cost.</li>
+    </ul>
+</section>
+
+<!-- Disadvantages of Hibernate -->
+<section>
+    <h2>2. What is the disadvantage of Hibernate?</h2>
+    <ul>
+        <li>Can't perform multiple insert operations.</li>
+        <li>Debugging is difficult compared to JDBC.</li>
+        <li>Contains lots of boilerplate code.</li>
+        <li>Not suitable for small applications.</li>
+        <li>Execution can be slow as it performs SQL queries at runtime.</li>
+    </ul>
+</section>
+
+<!-- Difference between get() & load() -->
+<section>
+    <h2>3. Difference between get() & load()</h2>
+    <table>
+        <tr>
+            <th>get()</th>
+            <th>load()</th>
+        </tr>
+        <tr>
+            <td>Eager Loading</td>
+            <td>Lazy Loading</td>
+        </tr>
+        <tr>
+            <td>Returns null if the value is absent in the database.</td>
+            <td>Throws a Hibernate exception (ObjectNotFoundException) if the value is absent.</td>
+        </tr>
+        <tr>
+            <td>Always hits the database.</td>
+            <td>May or may not hit the database.</td>
+        </tr>
+    </table>
+</section>
+
+<!-- What is Session Factory? -->
+<section>
+    <h2>4. What is Session Factory?</h2>
+    <ul>
+        <li>SessionFactory is an interface.</li>
+        <li>It contains all DB-related property details.</li>
+        <li>SessionFactory is a factory for Session objects.</li>
+        <li>One SessionFactory per database in any application.</li>
+        <li>Usually created during application startup.</li>
+        <li>Holds 2nd level cache data.</li>
+    </ul>
+
+    <!-- Methods present in Session -->
+    <h3>Methods present in Session:</h3>
+    <ul>
+        <li>Wraps the JDBC connection.</li>
+        <li>Factory of Transaction, Query, and Criteria.</li>
+        <li>Provides an interface between the application and data stored in the database.</li>
+        <li>Holds a first-level cache of data.</li>
+    </ul>
+</section>
+
+<!-- Difference between save() & persist() -->
+<section>
+    <h2>5. Difference between save() & persist()</h2>
+    <table>
+        <tr>
+            <th>save()</th>
+            <th>persist()</th>
+        </tr>
+        <tr>
+            <td>Returns Serializable object.</td>
+            <td>Returns void.</td>
+        </tr>
+        <tr>
+            <td>Can save object within and outside transaction boundaries.</td>
+            <td>Can only save object within transaction boundaries.</td>
+        </tr>
+        <tr>
+            <td>Supported by Hibernate only.</td>
+            <td>Supported by Hibernate and JPA (Java Persistence API).</td>
+        </tr>
+        <tr>
+            <td>Creates a new row in the table for a detached object.</td>
+            <td>Throws a persistence exception for detached object.</td>
+        </tr>
+    </table>
+</section>
+
+<!-- States of an object -->
+<section>
+    <h2>6. What are the states of an object? Explain them.</h2>
+    <ul>
+        <li><strong>Transient state:</strong> Initial state of an object, not associated with the Session, modifications don't affect the database.</li>
+        <li><strong>Persistent state:</strong> Object associated with the Session, each object represents a row in the database table.</li>
+        <li><strong>Detached state:</strong> Object is no longer associated with the Session, modifications don't affect the database, but it still has a representation in the database.</li>
+    </ul>
+</section>
+
+<!-- Hibernate Transaction Management -->
+<section>
+    <h2>7. What is Hibernate transaction management?</h2>
+    <ul>
+        <li>Methods like update & delete need transaction boundaries.</li>
+        <li>Commit & Rollback need a transaction object.</li>
+        <li>Commit is used to save an object into the database after using save method.</li>
+        <li>Rollback handles checked to unchecked exceptions, internally done by Hibernate.</li>
+    </ul>
+</section>
+
+<!-- Cache and 1st level cache -->
+<section>
+    <h2>8. What is cache? What is 1st level cache?</h2>
+    <ul>
+        <li>Cache stores data to reduce the number of database queries.</li>
+        <li>1st level cache is associated with the session and is always enabled.</li>
+        <li>When a query is fired, data is stored in the local session. Subsequent queries for the same data within the session use the local session rather than hitting the database again.</li>
+    </ul>
+</section>
+
+<!-- 2nd level cache -->
+<section>
+    <h2>9. What is 2nd level cache?</h2>
+    <ul>
+        <li>Associated with the session factory and needs to be enabled.</li>
+        <li>Available globally for all sessions, stores data from the database to 1st level cache and then to 2nd level cache.</li>
+        <li>If data is not found in the 1st level cache, it checks the 2nd level cache before firing a query to the database.</li>
+    </ul>
+</section>
+
+<!-- Remove object from cache -->
+<section>
+    <h2>10. How to remove a particular object from the cache?</h2>
+    <p>Session has the <code>evict()</code> method used for removing a particular cache.</p>
+</section>
+
+<!-- Clean cache -->
+<section>
+    <h2>11. How to clean cache?</h2>
+    <p>Session has the <code>clear()</code> method to clear all cache.</p>
+</section>
+
+<!-- Versions of Hibernate, Spring, Spring Boot used -->
+<section>
+    <h2>12. Which version of Hibernate, Spring, Spring Boot have you used?</h2>
+    <p>Hibernate-4, Spring-4, Spring Boot-2.</p>
+</section>
+
+<!-- One-to-Many & Many-to-One tables -->
+<section>
+    <h2>13. In One-to-Many & Many-to-One, how many tables are created by default and if mapped by is used?</h2>
+    <p>By default, it will create 3 tables. For mapped by, it will create 2 tables.</p>
+</section>
+
+<!-- Many-to-Many tables -->
+<section>
+    <h2>14. In Many-to-Many, how many tables are created by default and if mapped by is used?</h2>
+    <p>By default, it will create 4 tables. For mapped by, it will create 3 tables.</p>
+</section>
+
+<!-- hbm2ddl -->
+<section>
+    <h2>15. What does hbm2ddl do?</h2>
+    <p>It validates the number of columns.</p>
+</section>
+
+<!-- Disable 1st level cache -->
+<section>
+    <h2>16. How to disable 1st level cache?</h2>
+    <p>We can't disable the cache, but we can clear all cache using the <code>clear()</code> method of the session, making it work as if disabled.</p>
+</section>
+
+<!-- Enable 2nd level cache -->
+<section>
+    <h2>17. How to enable 2nd level cache?</h2>
+    <ol>
+        <li>Add third-party JAR files (e.g., Ehcache).</li>
+        <li>Add the annotation <code>@Cache(usage=CacheConcurrencyStrategy.READ_WRITE)</code> to the entity class.</li>
+        <li>Include two extra lines in settings in 'HibernateUtil.class':
+            <ul>
+                <li><code>settings.put(Environment.USE_SECOND_LEVEL_CACHE, "true");</code></li>
+                <li><code>settings.put(Environment.CACHE_REGION_FACTORY, "org.hibernate.cache.ehcache.EhCacheRegionFactory");</code></li>
+            </ul>
+        </li>
+    </ol>
+</section>
+
+<!-- How to remove a particular object from cache -->
+<section>
+    <h2>18. How to remove a particular object from cache?</h2>
+    <p>Session has the <code>evict()</code> method used for removing a particular cache.</p>
+</section>
+
+<!-- How to clean cache -->
+<section>
+    <h2>19. How to clean cache?</h2>
+    <p>Session has the <code>clear()</code> method to clear all cache.</p>
+</section>
+
+<!-- How you have used Hibernate (XML, Annotations, Java Based) -->
+<section>
+    <h2>20. How have you used Hibernate (XML, Annotations, Java-Based)?</h2>
+    <p>Always answer as Annotation-Based.</p>
 </section>
 
 </body>
