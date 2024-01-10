@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP Concepts</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Abstraction -->
+<section>
+    <h2>1. Abstraction</h2>
+    <p>Hiding internal implementation and sharing a set of services is called abstraction. It can be achieved by using "Interface" and "Abstract Class". Examples: Car, Mobile, etc.</p>
+</section>
+
+<!-- Encapsulation -->
+<section>
+    <h2>2. Encapsulation</h2>
+    <p>Wrapping of data member and methods is called Encapsulation. It is achieved by making data members "private". POJO class is a good example of encapsulation. Examples: Engine, Gearbox within Car, etc.</p>
+</section>
+
+<!-- Abstraction vs. Encapsulation -->
+<section>
+    <h2>3. Difference between Abstraction and Encapsulation</h2>
+    <table>
+        <tr>
+            <th>Abstraction</th>
+            <th>Encapsulation</th>
+        </tr>
+        <tr>
+            <td>Hiding internal implementation and sharing set of services.</td>
+            <td>Wrapping of data member and methods.</td>
+        </tr>
+        <tr>
+            <td>It increases code.</td>
+            <td>It decreases code.</td>
+        </tr>
+        <tr>
+            <td>It solves problems at the design level.</td>
+            <td>It solves problems at the implementation level.</td>
+        </tr>
+    </table>
+</section>
+
+<!-- Inheritance -->
+<section>
+    <h2>4. Inheritance</h2>
+    <p>Acquiring properties of the Parent class is called inheritance. It is also called IS-A relationship. It helps in the reusability of code. Example: New Car version inherits properties from old versions.</p>
+</section>
+
+<!-- Polymorphism -->
+<section>
+    <h2>5. Polymorphism</h2>
+    <p>Polymorphism means one name, many forms. It makes reusability simple and also makes code understanding easy. There are two types of Polymorphism: Runtime Polymorphism (Dynamic Binding, Overriding) and Compile-time Polymorphism (Static Binding, Overloading).</p>
+</section>
+
+<!-- IS-A and HAS-A Relationship -->
+<section>
+    <h2>6. Difference between IS-A Relationship & HAS-A Relationship</h2>
+    <table>
+        <tr>
+            <th>IS-A Relationship</th>
+            <th>HAS-A Relationship</th>
+        </tr>
+        <tr>
+            <td>It is also known as inheritance, acquiring parent class properties.</td>
+            <td>It is acquiring class properties by creating an instance of that class.</td>
+        </tr>
+        <tr>
+            <td>It is achieved by "extends" keyword.</td>
+            <td>It is achieved by "new" keyword.</td>
+        </tr>
+    </table>
+</section>
+
+<!-- Overloading vs. Overriding -->
+<section>
+    <h2>7. Difference between Overloading & Overriding</h2>
+    <table>
+        <tr>
+            <th>Overloading</th>
+            <th>Overriding</th>
+        </tr>
+        <tr>
+            <td>We can overload method and constructor both.</td>
+            <td>We can override a method but we can't override a constructor.</td>
+        </tr>
+        <tr>
+            <td>We can overload static, private, and final methods.</td>
+            <td>We can't override static, private, and final methods.</td>
+        </tr>
+    </table>
+</section>
+
+<!-- Static -->
+<section>
+    <h2>8. Static</h2>
+    <p>Static is a keyword. It can be applied to variables, methods, blocks, and classes. It helps in achieving reusability by allowing common properties for all objects.</p>
+</section>
+
+<!-- Non-Static Block -->
+<section>
+    <h2>9. Non-Static Block</h2>
+    <p>It is used for non-initializing content. Before calling the constructor, the non-static block is executed.</p>
+</section>
+
+<!-- Constructor -->
+<section>
+    <h2>10. Constructor</h2>
+    <p>A constructor in Java is a special method that is called when an object of a class is created. It is used to initialize objects as well as non-static variables. Constructors can also take parameters to initialize data members.</p>
+</section>
+
+<!-- Object -->
+<section>
+    <h2>11. Object</h2>
+    <p>An object is an instance of a class. Objects have states and behaviors. Ways to create an object include using the new Operator, newInstance(), Clone(), Factory methods, and Deserialization.</p>
+</section>
+
+</body>
+</html>
