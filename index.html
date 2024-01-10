@@ -1616,6 +1616,190 @@ public class Test {
         <li>There are no setter methods, i.e., we have no option to change the value of the instance variable.</li>
     </ul>
 </section>
+    
+<!-- Logical Problems -->
+    <header><h1>Logical Problems</h1></header>
+<section>
+    
+
+    <!-- 1. Find Even-Odd Number? -->
+    <article>
+        <h3>1. Find Even-Odd Number?</h3>
+        <pre><code>
+            public class Test1 {
+                public static void main(String[] args) {
+                    Scanner sc = new Scanner(System.in);
+                    int n = sc.nextInt();
+                    if (n % 2 == 0) {
+                        System.out.println(n + " is Even number.");
+                    } else {
+                        System.out.println(n + " is Odd number.");
+                    }
+                }
+            }
+        </code></pre>
+    </article>
+
+    <!-- 2. Find factorial of number? -->
+    <article>
+        <h3>2. Find factorial of number?</h3>
+        <pre><code>
+            public class Test2 {
+                public static void main(String[] args) {
+                    Scanner sc = new Scanner(System.in);
+                    int n = sc.nextInt();
+                    int sum = 1;
+
+                    for (int i = 1; i <= n; i++) {
+                        sum = sum * i;
+                    }
+                    System.out.println("Factorial of " + n + " is: " + sum);
+                }
+            }
+        </code></pre>
+    </article>
+
+    <!-- 3. Find Prime Number? -->
+    <article>
+        <h3>3. Find Prime Number?</h3>
+        <pre><code>
+            public class Test {
+                public static void main(String[] args) {
+                    Scanner sc = new Scanner(System.in);
+                    int n = sc.nextInt();
+                    int count = 0;
+                    for (int i = 1; i <= n; i++) {
+                        if (n % i == 0) {
+                            count++;
+                        }
+                    }
+                    if (count == 2) {
+                        System.out.println(n + " is prime number.");
+                    } else {
+                        System.out.println(n + " is not a prime number.");
+                    }
+                }
+            }
+        </code></pre>
+    </article>
+
+    <!-- 4. Find Armstrong number? -->
+    <article>
+        <h3>4. Find Armstrong number?</h3>
+        <pre><code>
+            public class Test {
+                public static void main(String[] args) {
+                    Scanner sc = new Scanner(System.in);
+                    int n = sc.nextInt();
+                    int m = n;
+                    int count = 0;
+                    while (m > 0) {
+                        m = m / 10;
+                        count++;
+                    }
+                    m = n;
+                    int sum = 0, k = 1;
+                    while (m > 0) {
+                        m = m / 10;
+                        int c = count;
+                        for (int i = 1; i <= c; i++) {
+                            k = k * m;
+                            sum = sum + k;
+                        }
+                    }
+                    if (sum == n) {
+                        System.out.println(n + " is Armstrong number.");
+                    } else {
+                        System.out.println(n + " is not an Armstrong number.");
+                    }
+                }
+            }
+        </code></pre>
+    </article>
+
+    <!-- 5. Find Palindrome Number? -->
+    <article>
+        <h3>5. Find Palindrome Number?</h3>
+        <pre><code>
+            public class Test {
+                public static void main(String[] args) {
+                    Scanner sc = new Scanner(System.in);
+                    int n = sc.nextInt();
+                    int nrev = 0, n1 = n;
+                    while (n > 0) {
+                        nrev = nrev * 10 + (n % 10);
+                        n = n / 10;
+                    }
+                    if (n1 == nrev) {
+                        System.out.println(n1 + " is Palindrome number.");
+                    } else {
+                        System.out.println(n1 + " is not a Palindrome number.");
+                    }
+                }
+            }
+        </code></pre>
+    </article>
+
+    <!-- 6. Find Perfect Number? -->
+    <article>
+        <h3>6. Find Perfect Number?</h3>
+        <pre><code>
+            public class Test {
+                public static void main(String[] args) {
+                    Scanner sc = new Scanner(System.in);
+                    int n = sc.nextInt();
+                    int sum = 0;
+                    for (int i = 1; i < n; i++) {
+                        if (n % i == 0) {
+                            sum = sum + i;
+                        }
+                    }
+                    if (sum == n) {
+                        System.out.println(n + " is Perfect number.");
+                    } else {
+                        System.out.println(n + " is not a Perfect number.");
+                    }
+                }
+            }
+        </code></pre>
+    </article>
+
+    <!-- 7. Swap the numbers? -->
+    <article>
+        <h3>7. Swap the numbers?</h3>
+        <pre><code>
+            public class Test {
+                public static void main(String[] args) {
+                    Scanner sc = new Scanner(System.in);
+                    int n1 = sc.nextInt();
+                    int n2 = sc.nextInt();
+                    int temp = n1;
+                    n1 = n2;
+                    n2 = temp;
+                }
+            }
+        </code></pre>
+    </article>
+
+    <!-- 8. Print Fibonacci Series? -->
+    <article>
+        <h3>8. Print Fibonacci Series?</h3>
+        <pre><code>
+            public class Test {
+                public static void main(String[] args) {
+                    System.out.println("1, ");
+                    int j = 1, k = 0;
+                    for (int i = 0; i <= 10; i++) {
+                        int m = j + k;
+                        System.out.println(m + " , ");
+                        k = j;
+                        j = m;
+                    }
+                }
+            }
+        </code></pre>
+    </article>
+</section>
 
 </body>
 </html>
