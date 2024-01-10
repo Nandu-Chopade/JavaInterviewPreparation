@@ -785,6 +785,837 @@ System.out.println(m); // {5=java, 5=cjc}
     <h2>20. How have you used Hibernate (XML, Annotations, Java-Based)?</h2>
     <p>Always answer as Annotation-Based.</p>
 </section>
+<!-- Spring Framework -->
+    <header>
+    <h1>Spring Framework</h1>
+  </header>
+
+<section>
+    <!-- Why do we use spring? -->
+    <h3>1. Why do we use spring?</h3>
+    <ul>
+        <li>It is lightweight and open-source.</li>
+        <li>Complete end (applicable for all layers in the application) & modular framework (applicable for a particular layer in the application).</li>
+        <li>Enables loose coupling.</li>
+        <li>Non-invasive framework (doesn’t force to extend or implement any base class or interface).</li>
+        <li>Facilitates the development of easy-to-test applications.</li>
+    </ul>
+
+    <!-- Which server Spring has by-default? -->
+    <h3>2. Which server does Spring have by default?</h3>
+    <p>Spring doesn’t have a server by default; it needs to be added externally.</p>
+
+    <!-- List out the modules of spring? -->
+    <h3>3. List out the modules of Spring?</h3>
+    <p>There are a total of 6 modules in Spring:</p>
+    <ul>
+        <li>Spring Core</li>
+        <li>Spring Context/J2EE</li>
+        <li>Spring DAO/JDBC</li>
+        <li>Spring ORM</li>
+        <li>Spring AOP</li>
+        <li>Spring Web MVC</li>
+    </ul>
+
+    <!-- What is IOC in spring? -->
+    <h3>4. What is IOC in Spring?</h3>
+    <ul>
+        <li>IOC stands for Inversion of Control.</li>
+        <li>It is the heart of the Spring framework.</li>
+        <li>It converts objects from tight coupling to loose coupling, achieved by dependency injection.</li>
+        <li>
+            <strong>Tight Coupling:</strong> Change in one class forces a change in another (dependent) class.
+            <br>
+            <strong>Loose Coupling:</strong> Change in one class doesn’t force a change in another (dependent) class.
+        </li>
+    </ul>
+
+    <!-- What are the types of Dependency? -->
+    <h3>5. What are the types of Dependency?</h3>
+    <p>Primitive, Secondary, and Collection.</p>
+
+    <!-- What is Dependency and what is Dependency Injection? -->
+    <h3>6. What is Dependency, and what is Dependency Injection?</h3>
+    <p>Data members or properties are dependencies, and assigning values to those data members is called dependency injection.</p>
+
+    <!-- What are the types of Dependency Injection (DI)? -->
+    <h3>7. What are the types of Dependency Injection (DI)?</h3>
+    <ul>
+        <li>Setter-based DI</li>
+        <li>Constructor-based DI</li>
+    </ul>
+
+    <!-- Difference between Setter based and Constructor based -->
+    <h3>8. Difference between Setter-based and Constructor-based DI</h3>
+    <table>
+        <tr>
+            <th>Setter Based DI</th>
+            <th>Constructor Based DI</th>
+        </tr>
+        <tr>
+            <td>Allows partial injection.</td>
+            <td>Does not allow partial injection.</td>
+        </tr>
+        <tr>
+            <td>Overrides constructor-based DI.</td>
+            <td>Doesn't override setter-based DI.</td>
+        </tr>
+        <tr>
+            <td>Mutable.</td>
+            <td>Immutable.</td>
+        </tr>
+        <tr>
+            <td>Increases lines of code.</td>
+            <td>Decreases lines of code.</td>
+        </tr>
+    </table>
+
+    <!-- What are the types of Container? -->
+    <h3>9. What are the types of Container?</h3>
+    <p>Bean Factory (Core) Container & Application Context Container.</p>
+
+    <!-- Difference between Bean Factory Container & Application Context Container? -->
+    <h3>10. Difference between Bean Factory Container & Application Context Container?</h3>
+    <table>
+        <tr>
+            <th>Bean Factory</th>
+            <th>Application Context</th>
+        </tr>
+        <tr>
+            <td>Core or legacy container.</td>
+            <td>Advanced container, extends bean factory, and has additional advanced properties.</td>
+        </tr>
+        <tr>
+            <td>Used for developing desktop-based applications.</td>
+            <td>Used for developing web-based & desktop-based applications.</td>
+        </tr>
+        <tr>
+            <td>Lazy loading.</td>
+            <td>Eager loading.</td>
+        </tr>
+        <tr>
+            <td>Doesn't support annotations.</td>
+            <td>Supports annotations.</td>
+        </tr>
+    </table>
+
+    <!-- How to make Application Context Lazy loading? -->
+    <h3>11. How to make Application Context Lazy loading?</h3>
+    <p>By using scope as Prototype, we can make Application Context act as lazy loading.</p>
+
+    <!-- What are bean scopes? -->
+    <h3>12. What are bean scopes?</h3>
+    <p>There are five bean scopes:</p>
+    <ul>
+        <li>Singleton (same instance per IOC container)</li>
+        <li>Prototype (any number of instances per IOC container)</li>
+        <li>Request (Valid for Spring-based applications, used for HTTP request)</li>
+        <li>Session (Valid for Spring-based applications, used for HTTP session)</li>
+        <li>Global Session (Valid for Spring-based applications, used for global HTTP session)</li>
+    </ul>
+
+    <!-- What is autowiring? -->
+    <h3>13. What is autowiring?</h3>
+    <p>For injecting secondary types of dependency, we use autowiring.</p>
+
+    <!-- How to enable Autowiring? -->
+    <h3>14. How to enable Autowiring?</h3>
+    <ul>
+        <li>Add Spring context and <code>&lt;context:annotation-config /&gt;</code> in the bean configuration file.</li>
+        <li>Include <code>AutowiredAnnotationBeanPostProcessor</code> directly in the bean configuration file.
+            <br>
+            <code>&lt;bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" /&gt;</code>
+        </li>
+    </ul>
+
+    <!-- What does autowire support by-default? -->
+    <h3>15. What does autowire support by-default?</h3>
+    <p>By default, autowire supports byType.</p>
+
+    <!-- What is front controller? -->
+    <h3>16. What is a front controller?</h3>
+    <ul>
+        <li>Also known as Dispatcher Servlet.</li>
+        <li>Manages the entire process.</li>
+        <li>Finds the appropriate class as per the request.</li>
+    </ul>
+
+    <!-- What are Stereotype annotations? Explain them? -->
+    <h3>17. What are Stereotype annotations? Explain them.</h3>
+    <ul>
+        <li><code>@Controller:</code> Identifies a class as a controller class & marks it as a bean.</li>
+        <li><code>@Service:</code> Identifies a class as a service class & tells it has business logic.</li>
+        <li><code>@Repository:</code> Identifies a class as a DAO layer class & tells it has a database connection.</li>
+    </ul>
+
+    <!-- Can we write @Repository for a business logic class and @Service for dao logic class? -->
+    <h3>18. Can we write @Repository for a business logic class and @Service for a dao logic class?</h3>
+    <p>Yes, we can shuffle <code>@Repository</code> and <code>@Service</code>. It is just to help other programmers identify the business logic class and DAO layer class. However, we can't replace <code>@Controller</code> class.</p>
+
+    <!-- What are annotations used in spring? -->
+    <h3>19. What are annotations used in Spring?</h3>
+    <ul>
+        <li><code>@RequestMapping:</code> Used at class level or method level. Maps URLs.</li>
+        <li><code>@RequestParam:</code> Brings a single variable from the client side. E.g., Username, Password from the client side.</li>
+        <li><code>@ModalAttribute:</code> Brings a complete POJO class from the client side. E.g., Registration form data from the client side.</li>
+    </ul>
+
+    <!-- What is server-side validations or spring validations? -->
+    <h3>20. What is server-side validations or Spring validations?</h3>
+    <p>Some annotations can be used as validations. Annotations like:</p>
+    <ul>
+        <li><code>@NotEmptyValidation</code></li>
+        <li><code>@SizeAnnotation</code></li>
+        <li><code>@EmailAnnotation</code></li>
+        <li><code>@NotNullAnnotation</code></li>
+        <li><code>@Valid</code>: Data from the client side using the request; then, this checks if the data is as per validations or not.</li>
+    </ul>
+</section>
+
+    
+
+    <!-- Spring Boot -->
+     <header>
+    <h1>Spring Boot</h1>
+  </header>
+<section>
+    <!-- Why to use Spring Boot rather than Spring MVC? -->
+    <h3>1. Why use Spring Boot rather than Spring MVC?</h3>
+    <ul>
+        <li>Spring Boot has an embedded Tomcat server, eliminating the need for an external server.</li>
+        <li>It provides starter templates through Maven Dependency (Web Starter, JPA Starter, etc.).</li>
+        <li>Automatically configures Spring applications using <code>@Autoconfigure</code> based on dependencies.</li>
+        <li>Utilizes annotations, skipping XML configurations.</li>
+    </ul>
+
+    <!-- Different ways to create Spring Boot applications -->
+    <h3>2. Different ways to create Spring Boot applications?</h3>
+    <ul>
+        <li>Using Spring Initializer (<a href="https://start.spring.io/" target="_blank">https://start.spring.io/</a>)</li>
+        <li>Using Spring STS (Spring Tool Suite)</li>
+        <li>Using Spring Boot CLI</li>
+        <li>Using Spring IDE (Eclipse)</li>
+    </ul>
+
+    <!-- How does Spring Boot application work? -->
+    <h3>3. How does Spring Boot application work?</h3>
+    <ol>
+        <li>Create a new Spring Boot application project.</li>
+        <li>Specify the starter dependency in <code>pom.xml</code>.</li>
+        <li>Dependencies are added to the project.</li>
+        <li>Execute the program from the <code>main()</code> method, where auto-configuration is done.</li>
+        <li>Execute <code>SpringApplication.run()</code> to launch the program.</li>
+    </ol>
+
+    <!-- What does @SpringBootApplication do? -->
+    <h3>4. What does <code>@SpringBootApplication</code> do?</h3>
+    <ul>
+        <li>Marks the class as a bean.</li>
+        <li>Uses three inbuilt annotations: <code>@Configuration</code>, <code>@EnableAutoConfiguration</code>, and <code>@ComponentScan</code>.</li>
+        <li><code>@Configuration:</code> Indicates that the class is a Spring bean.</li>
+        <li><code>@EnableAutoConfiguration:</code> Configures the application based on the added jars.</li>
+        <li><code>@ComponentScan:</code> Scans other packages in the application.</li>
+    </ul>
+
+    <!-- What does SpringApplication.run() statement do? -->
+    <h3>5. What does <code>SpringApplication.run()</code> statement do?</h3>
+    <p>It bootstraps and launches the Spring Boot application.</p>
+
+    <!-- How do we monitor & manage our application? -->
+    <h3>6. How do we monitor & manage our application?</h3>
+    <ul>
+        <li>To get production-ready features, use Spring Boot Actuator.</li>
+        <li>It has inbuilt HTTP endpoints.</li>
+        <li>Create custom endpoints.</li>
+        <li>Enable this using Spring Boot Actuator.</li>
+        <li>Example endpoints: <code>/bean</code> (name of beans in application), <code>/health</code> (up or down status of the application).</li>
+    </ul>
+
+    <!-- What is Spring Boot profile (@profile)? -->
+    <h3>7. What is Spring Boot profile (<code>@Profile</code>)?</h3>
+    <ul>
+        <li>Provides ways to divide applications to spare them for a particular environment.</li>
+        <li>Specify <code>@Profile</code> to indicate that the code is written for a specific environment.</li>
+        <li>Environments include Development, Production, Testing, etc.</li>
+        <li>Each environment has different configurations.</li>
+    </ul>
+
+    <!-- What is Spring Data JPA? -->
+    <h3>8. What is Spring Data JPA?</h3>
+    <ul>
+        <li>It has three repository interfaces: <code>CrudRepository</code> (for CRUD operations), <code>PagingAndSortingRepository</code> (extends CrudRepository, used for paging and sorting), and <code>JPARepository</code> (extends PagingAndSortingRepository, used for all above and its additional services).</li>
+    </ul>
+
+    <!-- How to create custom queries? -->
+    <h3>9. How to create custom queries?</h3>
+    <p>Using <code>@Query</code> annotation. For example:</p>
+    <pre><code>@Query("select c from City c where c.name like %?1")<br>List&lt;City&gt; findByNameEndsWith(String chars);</code></pre>
+
+    <!-- How did you manage session in your project? -->
+    <h3>10. How did you manage session in your project?</h3>
+    <p>We have used Spring Security, although I haven't implemented it; my senior has implemented it.</p>
+
+    <!-- How to configure Hibernate in Spring Boot? -->
+    <h3>11. How to configure Hibernate in Spring Boot?</h3>
+    <ul>
+        <li>Add JPA & MySQL database dependency.</li>
+        <li>In <code>application.properties</code>, write Hibernate configurations to connect to the database.</li>
+    </ul>
+
+    <!-- How is the application.properties file added to the container? -->
+    <h3>12. How is the <code>application.properties</code> file added to the container?</h3>
+    <p><code>@EnableAutoConfiguration</code> annotation is responsible for the connection between the database & application while configuring Hibernate by adding the <code>application.properties</code> file to the container from its fixed path or specified path.</p>
+</section>
+
+    <!-- RESTful Web Service -->
+<section>
+    <h2>RESTful Web Service</h2>
+
+    <!-- What is web service? -->
+    <h3>1. What is a web service?</h3>
+    <ul>
+        <li>It is a medium or way of communicating applications over the network.</li>
+        <li>Client-server application or application component for communication.</li>
+        <li>Method of communication between two devices over the network.</li>
+        <li>Software system for interoperable machine-to-machine communication.</li>
+        <li>Collection of standards or protocols for exchanging information between two devices or applications.</li>
+    </ul>
+
+    <!-- What are the advantages of web service? -->
+    <h3>2. What are the advantages of web service?</h3>
+    <ul>
+        <li>Interoperability: Web services are accessible over the network, can be developed in any programming language.</li>
+        <li>Reusability: One web service can be used by many client applications simultaneously.</li>
+        <li>Loose Coupling: Web services achieve loose coupling between client and server code.</li>
+        <li>Easy to deploy and integrate, similar to web applications.</li>
+        <li>Supports multiple service versions simultaneously.</li>
+    </ul>
+
+    <!-- What are the types of web service and difference between them? -->
+    <h3>3. What are the types of web service and the difference between them?</h3>
+    <table>
+        <tr>
+            <th>SOAP</th>
+            <th>REST</th>
+        </tr>
+        <tr>
+            <td>Supports XML data format only.</td>
+            <td>Supports XML, HTML, Plain text, JSON, etc. data formats.</td>
+        </tr>
+        <tr>
+            <td>Protocol-based.</td>
+            <td>Architecture-based.</td>
+        </tr>
+        <tr>
+            <td>Cannot use REST.</td>
+            <td>Can use SOAP.</td>
+        </tr>
+        <tr>
+            <td>Has its own security.</td>
+            <td>Security needs to be added.</td>
+        </tr>
+        <tr>
+            <td>Less preferred.</td>
+            <td>More preferred.</td>
+        </tr>
+        <tr>
+            <td>Requires JAX-WS API for implementation.</td>
+            <td>Requires JAX-RS API for implementation.</td>
+        </tr>
+    </table>
+
+    <!-- What are the ways to implement Restful web service? Which one have you used? -->
+    <h3>4. What are the ways to implement Restful web service? Which one have you used?</h3>
+    <ul>
+        <li>In JAX-RS, there are three types to implement Restful web service:</li>
+        <ul>
+            <li>Jersey</li>
+            <li>RESTEasy</li>
+            <li>Spring with REST</li>
+        </ul>
+        <li>We have used Spring with REST.</li>
+    </ul>
+
+    <!-- By using spring with REST, how do we create Restful web service? -->
+    <h3>5. By using spring with REST, how do we create Restful web service?</h3>
+    <ul>
+        <li>Add REST dependency in <code>pom.xml</code> (spring-boot-starter-data-rest).</li>
+        <li>Add <code>@RestController</code> annotation for the controller class.</li>
+        <li>Map the methods written in the controller class.</li>
+    </ul>
+
+    <!-- What is REST? Why do you choose Restful web service? -->
+    <h3>6. What is REST? Why do you choose Restful web service?</h3>
+    <ul>
+        <li>REST stands for REpresentational State Transfer, an architectural style for developing network-accessible applications.</li>
+        <li>REST is a stateless client-server architecture where web services are resources identified by their URIs.</li>
+        <li>Reasons for choosing Restful web service:</li>
+        <ul>
+            <li>It is an architectural style, not a protocol.</li>
+            <li>Fast and has no restrictions like SOAP.</li>
+            <li>Supports various data formats including XML, HTML, Plain Text, JSON, etc.</li>
+            <li>Programming language and platform independent.</li>
+        </ul>
+    </ul>
+
+    <!-- Annotations used in Restful web service? -->
+    <h3>7. Annotations used in Restful web service?</h3>
+    <ul>
+        <li><code>@RestController</code></li>
+        <li><code>@GetMapping</code></li>
+        <li><code>@PostMapping</code></li>
+        <li><code>@DeleteMapping</code></li>
+        <li><code>@PutMapping</code></li>
+        <li><code>@PathVariable</code></li>
+        <li><code>@RequestBody</code></li>
+        <li><code>@ResponseBody</code></li>
+    </ul>
+
+    <!-- Difference between @Controller & @RestController? -->
+    <h3>8. Difference between <code>@Controller</code> & <code>@RestController</code>?</h3>
+    <table>
+        <tr>
+            <th><code>@Controller</code></th>
+            <th><code>@RestController</code></th>
+        </tr>
+        <tr>
+            <td>Used to mark a class as Spring MVC Controller.</td>
+            <td>Used in RESTful web services and is the equivalent of <code>@Controller + @ResponseBody</code>.</td>
+        </tr>
+        <tr>
+            <td>Returns a view.</td>
+            <td>Returns data.</td>
+        </tr>
+        <tr>
+            <td>Added in Spring 2.5 version.</td>
+            <td>Added in Spring 4.0 version.</td>
+        </tr>
+    </table>
+
+    <!-- Difference between @PathVariable & @PathParam? -->
+    <h3>9. Difference between <code>@PathVariable</code> & <code>@PathParam</code>?</h3>
+    <table>
+        <tr>
+            <th><code>@PathVariable</code></th>
+            <th><code>@PathParam</code></th>
+        </tr>
+        <tr>
+            <td>From the Spring framework.</td>
+            <td>From JAX-RS.</td>
+        </tr>
+        <tr>
+            <td>Works in both Spring MVC and REST.</td>
+            <td>Works in REST only.</td>
+        </tr>
+        <tr>
+            <td>Annotation on a method argument to bind it to the value of a URI template variable.</td>
+            <td>Parameter annotation mapping variable URI path fragments into your method call.</td>
+        </tr>
+    </table>
+</section>
+
+
+    <!-- RESTful Web Service -->
+    <header>
+    <h1>RESTful Web Service</h1>
+  </header>
+<section>
+    <!-- What is web service? -->
+    <h3>1. What is a web service?</h3>
+    <ul>
+        <li>It is a medium or way of communicating applications over the network.</li>
+        <li>Client-server application or application component for communication.</li>
+        <li>Method of communication between two devices over the network.</li>
+        <li>Software system for interoperable machine-to-machine communication.</li>
+        <li>Collection of standards or protocols for exchanging information between two devices or applications.</li>
+    </ul>
+
+    <!-- What are the advantages of web service? -->
+    <h3>2. What are the advantages of web service?</h3>
+    <ul>
+        <li>Interoperability: Web services are accessible over the network, can be developed in any programming language.</li>
+        <li>Reusability: One web service can be used by many client applications simultaneously.</li>
+        <li>Loose Coupling: Web services achieve loose coupling between client and server code.</li>
+        <li>Easy to deploy and integrate, similar to web applications.</li>
+        <li>Supports multiple service versions simultaneously.</li>
+    </ul>
+
+    <!-- What are the types of web service and difference between them? -->
+    <h3>3. What are the types of web service and the difference between them?</h3>
+    <table>
+        <tr>
+            <th>SOAP</th>
+            <th>REST</th>
+        </tr>
+        <tr>
+            <td>Supports XML data format only.</td>
+            <td>Supports XML, HTML, Plain text, JSON, etc. data formats.</td>
+        </tr>
+        <tr>
+            <td>Protocol-based.</td>
+            <td>Architecture-based.</td>
+        </tr>
+        <tr>
+            <td>Cannot use REST.</td>
+            <td>Can use SOAP.</td>
+        </tr>
+        <tr>
+            <td>Has its own security.</td>
+            <td>Security needs to be added.</td>
+        </tr>
+        <tr>
+            <td>Less preferred.</td>
+            <td>More preferred.</td>
+        </tr>
+        <tr>
+            <td>Requires JAX-WS API for implementation.</td>
+            <td>Requires JAX-RS API for implementation.</td>
+        </tr>
+    </table>
+
+    <!-- What are the ways to implement Restful web service? Which one have you used? -->
+    <h3>4. What are the ways to implement Restful web service? Which one have you used?</h3>
+    <ul>
+        <li>In JAX-RS, there are three types to implement Restful web service:</li>
+        <ul>
+            <li>Jersey</li>
+            <li>RESTEasy</li>
+            <li>Spring with REST</li>
+        </ul>
+        <li>We have used Spring with REST.</li>
+    </ul>
+
+    <!-- By using spring with REST, how do we create Restful web service? -->
+    <h3>5. By using spring with REST, how do we create Restful web service?</h3>
+    <ul>
+        <li>Add REST dependency in <code>pom.xml</code> (spring-boot-starter-data-rest).</li>
+        <li>Add <code>@RestController</code> annotation for the controller class.</li>
+        <li>Map the methods written in the controller class.</li>
+    </ul>
+
+    <!-- What is REST? Why do you choose Restful web service? -->
+    <h3>6. What is REST? Why do you choose Restful web service?</h3>
+    <ul>
+        <li>REST stands for REpresentational State Transfer, an architectural style for developing network-accessible applications.</li>
+        <li>REST is a stateless client-server architecture where web services are resources identified by their URIs.</li>
+        <li>Reasons for choosing Restful web service:</li>
+        <ul>
+            <li>It is an architectural style, not a protocol.</li>
+            <li>Fast and has no restrictions like SOAP.</li>
+            <li>Supports various data formats including XML, HTML, Plain Text, JSON, etc.</li>
+            <li>Programming language and platform independent.</li>
+        </ul>
+    </ul>
+
+    <!-- Annotations used in Restful web service? -->
+    <h3>7. Annotations used in Restful web service?</h3>
+    <ul>
+        <li><code>@RestController</code></li>
+        <li><code>@GetMapping</code></li>
+        <li><code>@PostMapping</code></li>
+        <li><code>@DeleteMapping</code></li>
+        <li><code>@PutMapping</code></li>
+        <li><code>@PathVariable</code></li>
+        <li><code>@RequestBody</code></li>
+        <li><code>@ResponseBody</code></li>
+    </ul>
+
+    <!-- Difference between @Controller & @RestController? -->
+    <h3>8. Difference between <code>@Controller</code> & <code>@RestController</code>?</h3>
+    <table>
+        <tr>
+            <th><code>@Controller</code></th>
+            <th><code>@RestController</code></th>
+        </tr>
+        <tr>
+            <td>Used to mark a class as Spring MVC Controller.</td>
+            <td>Used in RESTful web services and is the equivalent of <code>@Controller + @ResponseBody</code>.</td>
+        </tr>
+        <tr>
+            <td>Returns a view.</td>
+            <td>Returns data.</td>
+        </tr>
+        <tr>
+            <td>Added in Spring 2.5 version.</td>
+            <td>Added in Spring 4.0 version.</td>
+        </tr>
+    </table>
+
+    <!-- Difference between @PathVariable & @PathParam? -->
+    <h3>9. Difference between <code>@PathVariable</code> & <code>@PathParam</code>?</h3>
+    <table>
+        <tr>
+            <th><code>@PathVariable</code></th>
+            <th><code>@PathParam</code></th>
+        </tr>
+        <tr>
+            <td>From the Spring framework.</td>
+            <td>From JAX-RS.</td>
+        </tr>
+        <tr>
+            <td>Works in both Spring MVC and REST.</td>
+            <td>Works in REST only.</td>
+        </tr>
+        <tr>
+            <td>Annotation on a method argument to bind it to the value of a URI template variable.</td>
+            <td>Parameter annotation mapping variable URI path fragments into your method call.</td>
+        </tr>
+    </table>
+</section>
+<!-- Design Pattern -->
+    <header>
+    <h1> Design Pattern </h1>
+  </header>
+<section>
+    <h2>Design Pattern</h2>
+
+    <!-- Explain with example Singleton Class Design Pattern -->
+    <h3>1. Explain with example Singleton Class Design Pattern?</h3>
+    <p>
+        Creating multiple objects for a Java class with the same data is a wastage of memory. So, we can use a Singleton Java class, which allows creating only one object per Java Virtual Machine (JVM). This minimizes memory wastage and improves performance. Singleton classes are useful when having only one instance is crucial.
+    </p>
+    <p>Example:</p>
+    <pre>
+    <code>
+class Demo {
+    private static Demo instance;
+    
+    private Demo() {
+        System.out.println("Demo: 0-arg Con");
+    }
+
+    // Static factory method
+    public static Demo getInstance() {
+        // Singleton Logic
+        if (instance == null) instance = new Demo();
+        return instance;
+    }
+
+    // Override Object class clone()
+    public Object clone() {
+        return instance;
+    }
+}
+    </code>
+    </pre>
+
+    <!-- How to break Singleton Class? -->
+    <h3>2. How to break Singleton Class?</h3>
+    <ul>
+        <li>Using Reflection:</li>
+        <pre>
+        <code>
+import java.lang.reflect.Constructor;
+
+public class Test {
+    public static void main(String[] args) throws Exception {
+        Demo s = Demo.getInstance();
+        Class clazz = Demo.class;
+        Constructor cons = clazz.getDeclaredConstructor();
+        cons.setAccessible(true);
+        Demo s2 = (Demo) cons.newInstance();
+    }
+}
+        </code>
+        </pre>
+        <li>The singleton will only work per classLoader. To break it, use multiple classLoaders.</li>
+        <li>Serialize the object, store it in a file, and deserialize it to get a new object.</li>
+    </ul>
+
+    <!-- What is Class Loader? -->
+    <h3>3. What is Class Loader?</h3>
+    <p>
+        The Java ClassLoader is a part of the Java Runtime Environment responsible for dynamically loading Java classes into the Java Virtual Machine. It allows classes to be loaded into memory when required by an application, and these classes are loaded dynamically to facilitate flexibility in loading classes at runtime.
+    </p>
+
+    <!-- What is a real-time example of Singleton Class Design Pattern? -->
+    <h3>4. What is a real-time example of Singleton Class Design Pattern?</h3>
+    <p>
+        A real-time example of a Singleton Class is a Music Player Software. The class contains services like Play the song, Stop the Song, Change the song, etc. Having a single instance of this class ensures that the same player instance is used for playing multiple songs in the application.
+    </p>
+</section>
+<!-- Serialization -->
+<section>
+    <h2>Serialization</h2>
+
+    <!-- What is Serialization? -->
+    <h3>1. What is Serialization?</h3>
+    <p>
+        Serialization is the process of saving or writing the state of an object to a file. It involves converting an object from its Java-supported form to a network or file-supported form. The serialization process can be achieved using the FileOutputStream and ObjectOutputStream classes.
+    </p>
+
+    <!-- Have you used Serialization in your project? -->
+    <h3>2. Have you used Serialization in your project?</h3>
+    <p>
+        (Answer based on personal experience)
+    </p>
+
+    <!-- What is a real-time technical example of Serialization? -->
+    <h3>3. What is a real-time technical example of Serialization?</h3>
+    <p>
+        In applications like Flipkart or Amazon, images of products in the buying section are often stored in binary format in databases using serialization. When clients download these images from the website, the images are deserialized into the client's device.
+    </p>
+
+    <!-- How to serialize particular states of objects of class? -->
+    <h3>4. How to serialize particular states of objects of class?</h3>
+    <p>
+        Serialization of specific states of objects can be achieved by using the externalization process. To provide externalizable ability for any object, the corresponding class should implement the Externalizable interface, which is a child interface of the Serializable interface.
+    </p>
+</section>
+
+<!-- Agile -->
+    <header> <h1> Agile </h1></header>
+<section>
+    <h2>Agile</h2>
+
+    <!-- Do you know Agile? Have you implemented it in your project? -->
+    <h3>1. Do you know Agile? Have you implemented it in your project?</h3>
+    <p>
+        The Agile Method and methodology is a particular approach to project management utilized in software development. It is an iterative approach to software delivery that builds software incrementally from the start of the project, instead of trying to deliver it all at once near the end.
+        (Provide details on the implementation if applicable)
+    </p>
+
+    <!-- What is Sprint? -->
+    <h3>2. What is Sprint?</h3>
+    <p>
+        Sprint is a time duration, typically of maximum 2 weeks or a minimum of 2 days, in which a predetermined set of work is completed.
+    </p>
+
+    <!-- What is Story? -->
+    <h3>3. What is Story?</h3>
+    <p>
+        A story refers to a task or work item assigned within the Agile framework.
+    </p>
+
+    <!-- Who is Scrum Master? -->
+    <h3>4. Who is Scrum Master?</h3>
+    <p>
+        The Scrum Master is a manager who oversees all Agile processes within a team. In some cases, the team manager may act as the Scrum Master in smaller-scale industries.
+    </p>
+
+    <!-- Who is Product Owner? -->
+    <h3>5. Who is Product Owner?</h3>
+    <p>
+        The Product Owner is a person who interacts with the client, gathers requirements, and converts them into stories to be assigned to developers.
+    </p>
+
+    <!-- What is your daily routine? -->
+    <h3>6. What is your daily routine?</h3>
+    <p>
+        Daily routines typically involve a daily stand-up or Scrum meeting at the start of the week, where the Scrum Master assigns stories to developers. The meeting includes discussions on roadblocks or problems encountered in stories.
+    </p>
+
+    <!-- What is Grooming Session? -->
+    <h3>7. What is Grooming Session?</h3>
+    <p>
+        A Grooming Session is held by the Product Owner, where upcoming stories are explained to developers, and requirements are discussed.
+    </p>
+
+    <!-- What is Retrospective Call? -->
+    <h3>8. What is Retrospective Call?</h3>
+    <p>
+        A Retrospective Call takes place at the end of a Sprint. It involves discussing issues encountered during the sprint and ensuring they are not repeated in the next sprint. Kudos and thanksgiving are also part of this session.
+    </p>
+
+    <!-- What is Demo Call? -->
+    <h3>9. What is Demo Call?</h3>
+    <p>
+        A Demo Call is held at the end of a sprint and involves demonstrating completed stories to the client. Client suggestions are then incorporated into the next sprint's stories by the Product Owner.
+    </p>
+
+    <!-- How did you gather requirements from Client? -->
+    <h3>10. How did you gather requirements from the Client?</h3>
+    <p>
+        Requirements are typically gathered by a Product Owner who interacts with the client. The gathered requirements are then converted into stories and assigned to developers.
+    </p>
+
+    <!-- How did Stories assign to you? -->
+    <h3>11. How did Stories assign to you?</h3>
+    <p>
+        Stories are usually received via emails from the Product Owner, with stories attached in document format. In larger companies, tools like JIRA are often used for handling the entire Agile process.
+    </p>
+</section>
+<!-- GitHub -->
+    <header><h1>GitHub</h1></header>
+<section>
+    <h2>GitHub</h2>
+
+    <!-- Tell all the steps followed in Github in your project? -->
+    <h3>1. Tell all the steps followed in GitHub in your project?</h3>
+    <ol>
+        <li><code>git clone url</code> (by default points to the master branch)</li>
+        <li><code>git checkout sprint1</code></li>
+        <li><code>git branch</code> (create a new branch name)</li>
+        <li><code>git checkout new_branch</code> (now it points to the new branch created)</li>
+        <li>Make changes in the code</li>
+        <li><code>git status</code></li>
+        <li><code>git add</code></li>
+        <li><code>git commit -m "commit message"</code></li>
+        <li><code>git push origin branch_name</code></li>
+    </ol>
+
+    <!-- What was Master Branch? -->
+    <h3>2. What was the Master Branch?</h3>
+    <p>
+        The Master Branch, also named "develop," contains clean code that goes for execution. Team leaders typically develop a new master branch for each sprint, and the team clones that.
+    </p>
+</section>
+
+<!-- String -->
+    <header><h1>String</h1></header>
+<section>
+
+    <!-- What is String Constant Pool (SCP) concept? -->
+    <h3>1. What is String Constant Pool (SCP) concept?</h3>
+    <p>
+        The String Constant Pool (SCP) is an area where String objects are created without using the <code>new</code> operator. Objects created in SCP are checked against previous objects before creation. If an object with the same content already exists, the reference variable points to the existing object. SCP does not allow duplicate objects.
+    </p>
+
+    <!-- When does an object get created in SCP? -->
+    <h3>2. When does an object get created in SCP?</h3>
+    <p>
+        Objects get created in SCP when a String object is created without using the <code>new</code> keyword or when only a String variable with content is created.
+    </p>
+
+    <!-- Why String is immutable? -->
+    <h3>3. Why is String immutable?</h3>
+    <p>
+        Strings are immutable to ensure that once created, their values cannot be changed. This immutability provides benefits such as security, synchronization, and performance optimization.
+    </p>
+
+    <!-- Difference between String & StringBuffer? -->
+    <h3>4. Difference between String & StringBuffer?</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>String</th>
+                <th>StringBuffer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>String class is immutable.</td>
+                <td>StringBuffer class is mutable.</td>
+            </tr>
+            <tr>
+                <td>String is slow and consumes more memory when concatenating too many strings because every time it creates a new instance.</td>
+                <td>StringBuffer is fast and consumes less memory when concatenating strings.</td>
+            </tr>
+            <tr>
+                <td>String class overrides the equals() method of the Object class.</td>
+                <td>StringBuffer class doesn't override the equals() method of the Object class.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- How to create an immutable class? -->
+    <h3>5. How to create an immutable class?</h3>
+    <ul>
+        <li>The instance variable of the class is <code>final</code>, i.e., we cannot change the value of it after creating an object.</li>
+        <li>The class is <code>final</code>, so we cannot create a subclass.</li>
+        <li>There are no setter methods, i.e., we have no option to change the value of the instance variable.</li>
+    </ul>
+</section>
 
 </body>
 </html>
